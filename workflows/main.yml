@@ -15,8 +15,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.pktrkt }}/chat-app .
-        docker login -u ${{ secrets.pktrkt }} -p ${{ secrets.dckr_pat_R9kKZilu1KvmxGa5M0cM8W7wXmw }}
-        docker push ${{ secrets.pktrkt }}/chat-app
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/chat-app .
+        docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/chat-app
       env:
         NODE_ENV: production
